@@ -21,3 +21,6 @@ GameStart:
 
 In-game description:
 Upon entering the game the player will see a menu. The player can choose their cars and the map they want to play using the menu. different cars have different configurations, for example, car2 is much slower than car1. the player can then drive the car along the map. there are two checkpoints implemented as a cube that can be passed by the car along the road, and once the player passes the finishing one while having also passed the previous one the lap count will be incremented. The speed and lapcount of the player will be shown on the top left corner of the player's screen. For a checkpoint to be considered passed, it will need to be passed while the previous point is also considered passed. After one checkpoint is considered passed, its previous checkpoint is considered not passed. Adding a bunch of those checkpoints and defining one as the finish line can make sure the player goes as expected. Once the lapcount is 3, the game will end and reach the endgame screen. Suppose the player crashes into some wall or a tree and causes a sudden drop in velocity. In that case, the car will be considered crashed and the material used will change to "carcrashed" material, which is dimmer and less reflective. Also, an audio clip will sound indicating that there is a crash.
+
+Video:
+PlayTest.mp4
