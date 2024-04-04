@@ -24,3 +24,4 @@ Upon entering the game the player will see a menu. The player can choose their c
 
 Video:
 https://youtu.be/3p_DuaWjjLo
+(To save time the three laps are not finished)
