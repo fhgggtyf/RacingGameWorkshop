@@ -15,6 +15,8 @@ public class GameController : MonoBehaviour
 
     public GameObject HudText;
 
+    public GameObject OverScreen;
+
     public int lap = 0;
 
 
@@ -29,7 +31,7 @@ public class GameController : MonoBehaviour
     {
         if (lap >= 3)
         {
-            Debug.Log("yes");
+            EndGame(OverScreen);
         }
         
     }
@@ -42,7 +44,7 @@ public class GameController : MonoBehaviour
     public void SetCarOnActive(GameObject car)
     {
         _selectedCar = car;
-        HudText.GetComponent<HudScript>().car = car;
+        HudText.GetComponentInChildren<HudScript>().car = car;
     }
 
     public void StartGame(GameObject ui)
@@ -51,5 +53,13 @@ public class GameController : MonoBehaviour
         _selectedCar.SetActive(true);
         _selectedMap.SetActive(true);
         ui.SetActive(false);
+    }
+
+    public void EndGame(GameObject ui)
+    {
+        HudText.SetActive(false);
+        _selectedCar.SetActive(false);
+        _selectedMap.SetActive(false);
+        ui.SetActive(true);
     }
 }

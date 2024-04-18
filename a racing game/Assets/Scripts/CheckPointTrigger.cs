@@ -4,9 +4,15 @@ using UnityEngine;
 
 public class CheckPointTrigger : MonoBehaviour
 {
+    [SerializeField] private bool isFinish;
+
     public GameController gameController;
 
-    private bool flag = false;
+    public CheckPointTrigger prevPoint;
+
+    private bool hitPrev;
+    private bool notCounted = false;
+    public bool hit;
 
     // Start is called before the first frame update
     void Start()
@@ -17,20 +23,32 @@ public class CheckPointTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hitPrev = prevPoint.hit;
         
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        flag = true;
+        if (hitPrev)
+        {
+            hit = true;
+            prevPoint.hit = false;
+            hitPrev = false;
+            notCounted = true;
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (flag)
+        if (hit)
         {
-            gameController.lap++;
-            flag = false;
+            if (isFinish && notCounted)
+            {
+                gameController.lap++;
+                notCounted = false;
+            }
+
         }
 
 

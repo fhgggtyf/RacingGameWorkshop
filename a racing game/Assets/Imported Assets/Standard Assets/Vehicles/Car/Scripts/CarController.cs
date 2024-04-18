@@ -80,8 +80,8 @@ namespace UnityStandardAssets.Vehicles.Car
         {
             if(PrevVelo - CurrentSpeed > 25)
             {
-                Debug.Log("crashe");
                 carMesh.GetComponent<MeshRenderer>().material = brokenMat;
+                this.GetComponent<CarAudio>().Crashed();
             }
             PrevVelo = CurrentSpeed;
         }
