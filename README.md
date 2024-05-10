@@ -1,3 +1,5 @@
+Hosted game: https://fhgggtyf.github.io/Build/index.html
+
 Terrain:
 
 <img width="1280" alt="176cc5be43c2d7d84f1056c1d10c98a" src="https://github.com/fhgggtyf/RacingGameWorkshop/assets/69708282/a458e4df-bf8a-42b3-8c4d-3ba89bc85379">
@@ -20,8 +22,12 @@ GameStart:
 ![image](https://github.com/fhgggtyf/RacingGameWorkshop/assets/69708282/df60c531-f7d3-4b27-a825-3a0fcbd78598)
 
 In-game description:
+
+Implemented points: 12345678(normal), 1(optional)
+
 Upon entering the game the player will see a menu. The player can choose their cars and the map they want to play using the menu. different cars have different configurations, for example, car2 is much slower than car1. the player can then drive the car along the map. there are two checkpoints implemented as a cube that can be passed by the car along the road, and once the player passes the finishing one while having also passed the previous one the lap count will be incremented. The speed and lapcount of the player will be shown on the top left corner of the player's screen. For a checkpoint to be considered passed, it will need to be passed while the previous point is also considered passed. After one checkpoint is considered passed, its previous checkpoint is considered not passed. Adding a bunch of those checkpoints and defining one as the finish line can make sure the player goes as expected. Once the lapcount is 3, the game will end and reach the endgame screen. Suppose the player crashes into some wall or a tree and causes a sudden drop in velocity. In that case, the car will be considered crashed and the material used will change to "carcrashed" material, which is dimmer and less reflective. Also, an audio clip will sound indicating that there is a crash.
 
 Video:
-https://youtu.be/3p_DuaWjjLo
-(To save time the three laps are not finished)
+https://youtu.be/hQR-QOwIo9Y (after 4.48 for "Laps" I mean "Circuit")
+
+All elements implemented are shown in the video.
