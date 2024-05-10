@@ -17,7 +17,10 @@ public class CheckPointTrigger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (isFinish)
+        {
+            hit = true;
+        }
     }
 
     // Update is called once per frame

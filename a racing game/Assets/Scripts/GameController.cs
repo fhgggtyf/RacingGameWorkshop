@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class GameController : MonoBehaviour
     private GameObject _selectedCar;
 
     public GameObject HudText;
+
+    public TMP_Text CarChoiceText;
+    public TMP_Text MapChoiceText;
+    public TMP_Text WarningText;
 
     public GameObject OverScreen;
 
@@ -39,20 +44,29 @@ public class GameController : MonoBehaviour
     public void SetMapOnActive(GameObject map)
     {
         _selectedMap = map;
+        MapChoiceText.text = "Map Choice: " + map.name;
     }
 
     public void SetCarOnActive(GameObject car)
     {
         _selectedCar = car;
+        CarChoiceText.text = "Car Choice: " + car.name;
         HudText.GetComponentInChildren<HudScript>().car = car;
     }
 
     public void StartGame(GameObject ui)
     {
-        HudText.SetActive(true);
-        _selectedCar.SetActive(true);
-        _selectedMap.SetActive(true);
-        ui.SetActive(false);
+        if(_selectedCar!=null && _selectedMap != null)
+        {
+            HudText.SetActive(true);
+            _selectedCar.SetActive(true);
+            _selectedMap.SetActive(true);
+            ui.SetActive(false);
+        }
+        else
+        {
+            WarningText.gameObject.SetActive(true);
+        }
     }
 
     public void EndGame(GameObject ui)

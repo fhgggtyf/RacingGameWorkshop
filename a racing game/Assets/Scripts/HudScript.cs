@@ -19,6 +19,6 @@ public class HudScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.GetComponent<TextMeshProUGUI>().text = gameController.lap + " laps\n" + car.GetComponent<UnityStandardAssets.Vehicles.Car.CarController>().CurrentSpeed + " MPH";
+        this.GetComponent<TextMeshProUGUI>().text = gameController.lap + " laps\n" + car.GetComponent<UnityStandardAssets.Vehicles.Car.CarController>().CurrentSpeed.ToString("0.00") + " MPH";
     }
 }
